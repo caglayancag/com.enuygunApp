@@ -105,14 +105,16 @@ public class flyDepartment {
 
         ReusableMethods.bekle(3);
         TouchAction touchAction = new TouchAction(Driver.getAppiumDriver())
-                .press(PointOption.point(538, 2139))
-                .moveTo(PointOption.point(555, 1567))
+                .press(PointOption.point(512, 2049))
+                .waitAction(waitOptions(Duration.ofMillis(1000)))
+                .moveTo(PointOption.point(525, 1460))
                 .release()
                 .perform();
+
         ReusableMethods.bekle(3);
 
         TouchAction touchAction2 = new TouchAction(Driver.getAppiumDriver());
-        touchAction.press(PointOption.point(850, 1708))
+        touchAction.press(PointOption.point(85, 2036))
                 .waitAction(waitOptions(Duration.ofMillis(100)))
                 .release()
                 .perform();
@@ -124,5 +126,94 @@ public class flyDepartment {
         ReusableMethods.bekle(3);
         flyPage.findCheapTicket.click();
     }
+
+    @Given("selects the flight in the first row")
+    public void selects_the_flight_in_the_first_row() {
+        flyPage.FirstFlight.click();
+        ReusableMethods.bekle(2);
+    }
+
+    @Given("Clicks the Continue button")
+    public void clicks_the_continue_button() {
+        flyPage.purchase.click();
+        ReusableMethods.bekle(2);
+    }
+
+    @Given("CellPhone {string} , Name {string} , LastName {string} , TCNo {string}")
+    public void cell_phone_name_last_name_tc_no(String CellPhone, String name, String lastName, String TCNo) {
+        flyPage.cellPhoneNumber.sendKeys(CellPhone);
+        flyPage.nameText.sendKeys(name);
+        flyPage.lastNameText.sendKeys(lastName);
+        flyPage.tcNo.sendKeys(TCNo);
+        // day    //293 1218   //293  1051
+        // month  //515 1258  //515 1059
+        // year  //770 1214 //770 1051
+
+        // devam kaydırma // 465 1733 // 465 716
+
+    }
+
+    @Given("Enter date of birth and select gender")
+    public void enter_date_of_birth_and_select_gender() {
+        flyPage.birthDate.click();
+        ReusableMethods.bekle(3);
+        TouchAction touchAction;
+        for (int i = 0; i < 14; i++) {
+            touchAction = new TouchAction(Driver.getAppiumDriver())
+                    .press(PointOption.point(293, 1218))
+                    .waitAction(waitOptions(Duration.ofMillis(1000)))
+                    .moveTo(PointOption.point(293, 1051))
+                    .release()
+                    .perform();
+        }
+
+        ReusableMethods.bekle(3);
+
+        for (int i = 0; i < 2; i++) {
+            touchAction = new TouchAction(Driver.getAppiumDriver())
+                    .press(PointOption.point(515, 1218))
+                    .waitAction(waitOptions(Duration.ofMillis(1000)))
+                    .moveTo(PointOption.point(515, 1051))
+                    .release()
+                    .perform();
+        }
+
+        ReusableMethods.bekle(3);
+
+        for (int i = 0; i < 2; i++) {
+            touchAction = new TouchAction(Driver.getAppiumDriver())
+                    .press(PointOption.point(770, 1218))
+                    .waitAction(waitOptions(Duration.ofMillis(1000)))
+                    .moveTo(PointOption.point(770, 1051))
+                    .release()
+                    .perform();
+        }
+        flyPage.birthDateContinue.click();
+
+        ReusableMethods.bekle(2);
+
+
+        flyPage.gennderSelect.click();
+
+    }
+
+    @Given("presses the continue button")
+    public void presses_the_continue_button() {
+        ReusableMethods.bekle(2);
+        TouchAction touchAction = new TouchAction(Driver.getAppiumDriver())
+                .press(PointOption.point(512, 2049))
+                .waitAction(waitOptions(Duration.ofMillis(1000)))
+                .moveTo(PointOption.point(525, 1460))
+                .release()
+                .perform();
+        ReusableMethods.bekle(3);
+        flyPage.continueButton.click();
+    }
+
+    @Given("closes the application")
+    public void closes_the_application() {
+       Driver.quitAppiumDriver();
+    }
+
 
 }

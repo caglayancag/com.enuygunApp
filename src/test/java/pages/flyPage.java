@@ -66,6 +66,43 @@ public class flyPage {
     @FindBy(id = "com.android.permissioncontroller:id/permission_deny_button")
     public MobileElement noticPermission;
 
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView[1]/android.view.ViewGroup[1]/android.view.ViewGroup")
+    public MobileElement FirstFlight;
+
+    @FindBy(id = "com.mobilatolye.android.enuygun:id/btn_purchase")
+    public MobileElement purchase;
+
+    @FindBy(id = "com.mobilatolye.android.enuygun:id/txtPhoneNumber")
+    public MobileElement cellPhoneNumber;
+
+    @FindBy(id = "com.mobilatolye.android.enuygun:id/txt_flight_passenger_list_item_passenger_name")
+    public MobileElement nameText;
+
+    @FindBy(id = "com.mobilatolye.android.enuygun:id/txt_flight_passenger_list_item_passenger_surname")
+    public MobileElement lastNameText;
+
+    @FindBy(id = "com.mobilatolye.android.enuygun:id/txt_flight_passenger_list_item_passenger_tckn")
+    public MobileElement tcNo;
+
+    @FindBy(id = "com.mobilatolye.android.enuygun:id/txt_flight_passenger_list_item_passenger_birth_date")
+    public MobileElement birthDate;
+
+    @FindBy(id = "android:id/button1")
+    public MobileElement birthDateContinue;
+
+    @FindBy(id = "com.mobilatolye.android.enuygun:id/btn_continue")
+    public MobileElement continueButton;
+
+    @FindBy(id = "com.mobilatolye.android.enuygun:id/radio_flight_passenger_list_item_passenger_gender_male")
+    public MobileElement gennderSelect;
+
+
+
+
+
+
+
+
 
 }
 

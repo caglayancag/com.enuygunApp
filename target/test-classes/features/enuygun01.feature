@@ -16,6 +16,13 @@ Feature: Air tickets can be purchased through the application.
     * Type "istanbul" in the search box and search
     * Selects "SAW"
     * Clicks the Date button
-    * Selects the date 19 "April" 2023
+    * Selects the date 22 "Mayıs" 2023
     * Clicks on the Find cheap tickets button
+    * selects the flight in the first row
+    * Clicks the Continue button
+    * CellPhone "5432828331" , Name "ismail" , LastName "bulbul" , TCNo "01234567891"
+    * Enter date of birth and select gender
+    * presses the continue button
+    * closes the application
+
 
